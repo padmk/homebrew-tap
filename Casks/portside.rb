@@ -1,7 +1,7 @@
 # Rendered by .github/workflows/release.yml into the tap as Casks/portside.rb.
 cask "portside" do
-  version "0.1.0"
-  sha256 "00fcb719b3a163761edaf3789d1fb7e675200bc1812e61baa4f6dd54c85c580e"
+  version "0.2.0"
+  sha256 "67db43f713efd815b05ff6d7556d35089e1ad42293c9531bc6cb184ec31d741b"
 
   url "https://github.com/padmk/portside/releases/download/v#{version}/Portside-#{version}.zip"
   name "Portside"
@@ -49,7 +49,7 @@ cask "portside" do
       ]
 
   caveats <<~EOS
-    To connect coding agents (Claude Code, Codex, Gemini CLI), run:
+    To connect coding agents (Claude Code, Codex), run:
       portside setup
 
     Uninstalling or upgrading leaves the daemon and its dev servers running.
