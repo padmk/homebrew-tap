@@ -1,7 +1,7 @@
 # Rendered by .github/workflows/release.yml into the tap as Casks/portside.rb.
 cask "portside" do
-  version "0.4.3"
-  sha256 "89697cc9fdad8877f0060fd35cb88e839095f400b7d43b90d54945a628ca397c"
+  version "0.5.0"
+  sha256 "ab2b237cefb60d2cf964948fcf62b5d7140db0b9850dc30d464be7d012641607"
 
   url "https://github.com/padmk/portside/releases/download/v#{version}/Portside-#{version}.zip"
   name "Portside"
@@ -20,6 +20,9 @@ cask "portside" do
   end
 
   # Upgrades run this too, so it leaves the daemon and its servers running.
+  # `brew upgrade` reopens an app it quit (Homebrew 5.1.12 or later), and the
+  # app then upgrades the older daemon in place. The cask opens nothing
+  # itself: an `open` here would make that reopen show the dashboard window.
   uninstall quit: "app.foreverbeta.portside.app"
 
   # The bundled binary is already removed when this runs, so the login
@@ -53,6 +56,7 @@ cask "portside" do
       portside setup
 
     Uninstalling or upgrading leaves the daemon and its dev servers running.
+    After an upgrade the app, once it runs again, updates the daemon in place.
     Before `brew uninstall --cask portside`, stop them with:
       portside daemon stop
     and, if you installed the login service:
