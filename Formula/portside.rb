@@ -1,18 +1,18 @@
 # Rendered by .github/workflows/release.yml into the tap as Formula/portside.rb.
 # Builds the command-line tool and its embedded dashboard from the tagged
-# source; the cask (portside.rb.tmpl) installs the prebuilt app instead.
+# source, on macOS and Linux; the cask (portside.rb.tmpl) installs the
+# prebuilt app instead.
 class Portside < Formula
   desc "Keep your local dev servers running, in one place"
   homepage "https://github.com/padmk/portside"
-  url "https://github.com/padmk/portside/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "3117c44f68b69d8c842b7f7badb2a25a5dd2ea391b86e701840c93785bb7c91e"
+  url "https://github.com/padmk/portside/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "dfabccdb4f987b394dd5229599527c0d9dc8ee097b07beb9c13070e2f2a78727"
   license "MIT"
 
   depends_on "go" => :build
   depends_on "node" => :build
   # Switches to the pnpm version pinned by web/package.json's packageManager.
   depends_on "pnpm" => :build
-  depends_on :macos
 
   # Homebrew records but does not enforce a conflict with a cask (and a cask
   # cannot name a formula): with the cask installed this formula is not
@@ -36,6 +36,8 @@ class Portside < Formula
       This installs the command-line tool and the daemon with its dashboard,
       without the menu bar app. Open the dashboard in your browser with:
         portside open
+      To start the daemon at login (on Linux at boot, with lingering), run:
+        portside service install
       To connect coding agents (Claude Code, Codex), run:
         portside setup
       After `brew upgrade portside`, run `portside daemon restart`.
