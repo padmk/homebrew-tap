@@ -5,8 +5,8 @@
 class Portside < Formula
   desc "Keep your local dev servers running, in one place"
   homepage "https://github.com/padmk/portside"
-  url "https://github.com/padmk/portside/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "35aa46f35a66dd5d2384eafc6de3c16046ac504d3bc5ba5cf5c488398b0ed838"
+  url "https://github.com/padmk/portside/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "970f8c53c695c2e65ad355a12445e531f61c959eef33939f848810226318c202"
   license "MIT"
 
   depends_on "go" => :build
