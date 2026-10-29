@@ -5,8 +5,8 @@
 class Bruse < Formula
   desc "Background control of your real browser for local AI agents"
   homepage "https://github.com/padmk/bruse"
-  url "https://github.com/padmk/bruse/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "b1f9cf88e8e8806038a7bfaedafbce4bf4d45a36eca89a1a3f3ba981c8f0074a"
+  url "https://github.com/padmk/bruse/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "cd1ac87c0c03a9c023e17b3b2e669b82675c15be99c5a0d450a17a68c8f4dad6"
   license "MIT"
 
   depends_on "node"
@@ -26,7 +26,7 @@ class Bruse < Formula
   def caveats
     <<~EOS
       To install the browser extension and register the MCP server with
-      Claude Code and Codex, run:
+      your agent clients (Claude Code, Codex, Cursor, VS Code and others), run:
         bruse setup
       The first time, it asks you to load the extension in your browser.
       After `brew upgrade bruse`, run `bruse setup` again.
