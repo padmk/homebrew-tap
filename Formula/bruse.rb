@@ -5,8 +5,8 @@
 class Bruse < Formula
   desc "Background control of your real browser for local AI agents"
   homepage "https://github.com/padmk/bruse"
-  url "https://github.com/padmk/bruse/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "5cec2bc1fa66ee3e7b7d790c73c6c6a1ebe191ffa885d52b801affb4a297f538"
+  url "https://github.com/padmk/bruse/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "35c2bc45d2d016dc8ede6b8245efc28fca9d8c66e6bfda6b09a2b96e66a80574"
   license "MIT"
 
   depends_on "node"
@@ -15,21 +15,29 @@ class Bruse < Formula
     libexec.install "bin", "browser", "installer", "package.json"
     node = formula_opt_bin("node")/"node"
     # INSTALL_NODE is the Node.js that setup registers for the MCP server:
-    # the opt path stays valid across `brew upgrade node`.
+    # the opt path stays valid across `brew upgrade node`. INSTALL_SOURCE is
+    # where the installed copy checks for a newer version after `brew upgrade bruse`.
     (bin/"bruse").write <<~SH
       #!/bin/bash
       export INSTALL_NODE="${INSTALL_NODE:-#{node}}"
+      export INSTALL_SOURCE="#{opt_libexec}/browser"
       exec "#{node}" "#{libexec}/bin/bruse.mjs" "$@"
     SH
   end
 
+  # Tty prints nothing when output is not a terminal or NO_COLOR is set.
   def caveats
     <<~EOS
-      To install the browser extension and register the MCP server with
-      your agent clients (Claude Code, Codex, Cursor, VS Code and others), run:
-        bruse setup
+      #{Tty.bold}#{Tty.yellow}Action needed. Run:#{Tty.reset}
+
+          #{Tty.bold}#{Tty.green}bruse setup#{Tty.reset}
+
+      It installs the browser extension and registers the MCP server with
+      your agent clients (Claude Code, Codex, Cursor, VS Code and others).
       The first time, it asks you to load the extension in your browser.
-      After `brew upgrade bruse`, run `bruse setup` again.
+
+      #{Tty.bold}Run it again after every `brew upgrade bruse`; until then
+      your browser and agents keep the previous version.#{Tty.reset}
     EOS
   end
 
