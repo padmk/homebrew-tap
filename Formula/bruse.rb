@@ -5,8 +5,8 @@
 class Bruse < Formula
   desc "Background control of your real browser for local AI agents"
   homepage "https://github.com/padmk/bruse"
-  url "https://github.com/padmk/bruse/archive/refs/tags/v0.23.6.tar.gz"
-  sha256 "80e11120d96ad75562f7100257cac6ee6119836efb0bd35c71bf16df6209fffe"
+  url "https://github.com/padmk/bruse/archive/refs/tags/v0.23.7.tar.gz"
+  sha256 "5e4b5db8106de441dd49689b4951585527a720b2f4af39977a1becca0c522fda"
   license "MIT"
 
   depends_on "node"
