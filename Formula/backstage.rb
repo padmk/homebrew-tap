@@ -5,16 +5,17 @@
 class Backstage < Formula
   desc "Let AI agents use your Mac's apps in the background"
   homepage "https://github.com/padmk/backstage"
-  url "https://github.com/padmk/backstage/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "c4da888d38166e1ff16ce0508f93d975b5f8f7eb53697e2e2bba1a602052d470"
+  url "https://github.com/padmk/backstage/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "b54ece592741e5a5f6c664172ace824cb129d7c2cb7456a16a427614672a15d9"
   license "MIT"
 
   depends_on arch: :arm64
   depends_on macos: :tahoe
 
   def install
-    # SwiftPM's own sandbox cannot start inside Homebrew's build sandbox.
-    system "make", "app", "SWIFT_BUILD_FLAGS=--disable-sandbox"
+    # SwiftPM's own sandbox cannot start inside Homebrew's build sandbox. Warnings a newer Xcode adds must not
+    # stop an install, so they stay warnings here.
+    system "make", "app", "SWIFT_BUILD_FLAGS=--disable-sandbox", "ALLOW_WARNINGS=1"
     libexec.install "build/Backstage.app"
     bin.write_exec_script libexec/"Backstage.app/Contents/Helpers/backstage"
   end
