@@ -5,8 +5,8 @@
 class Backstage < Formula
   desc "Let AI agents use your Mac's apps in the background"
   homepage "https://github.com/padmk/backstage"
-  url "https://github.com/padmk/backstage/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "f0cbd5628dfb91f7d6b6c2ea24bcfa07cf0f4ab50ad787285aaf7414037bced8"
+  url "https://github.com/padmk/backstage/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "87e53662123b4d2236e2d2aa8071a414e071272c34cc99d7b62e7be7190d170b"
   license "MIT"
 
   depends_on arch: :arm64
