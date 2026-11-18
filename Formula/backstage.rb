@@ -5,8 +5,8 @@
 class Backstage < Formula
   desc "Let AI agents use your Mac's apps in the background"
   homepage "https://github.com/padmk/backstage"
-  url "https://github.com/padmk/backstage/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "87e53662123b4d2236e2d2aa8071a414e071272c34cc99d7b62e7be7190d170b"
+  url "https://github.com/padmk/backstage/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "3ad632974c9fb4bedc90915f1d94aa2b7f80ffeef49ae43697af91bd7f2c98fe"
   license "MIT"
 
   depends_on arch: :arm64
@@ -33,7 +33,8 @@ class Backstage < Formula
 
       #{Tty.bold}Run it again after every `brew upgrade backstage`; until then
       agents keep the previous version.#{Tty.reset} Running agent sessions
-      then move to the new version on their next request by themselves.
+      then move to the new version on their next request by themselves,
+      unless the release notes say that sessions need a restart.
 
       Before `brew uninstall backstage`, which leaves the copy in
       Applications, run:
