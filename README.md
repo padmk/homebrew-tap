@@ -21,4 +21,13 @@ backstage setup
 
 [Backstage](https://github.com/padmk/backstage) lets AI agents use your Mac's apps in the background, while you keep working: an MCP server and a signed helper app, with a list of the apps agents may use. The formula builds the app from source and needs macOS 26 or later on Apple Silicon and the Xcode command line tools; `backstage setup` installs it into Applications and asks for Accessibility. Run `backstage setup` again after `brew upgrade backstage`, and `backstage uninstall` before `brew uninstall backstage`. Report problems in the [Backstage repository](https://github.com/padmk/backstage/issues).
 
-Each project's release workflow updates its own files here (`Casks/portside.rb` and `Formula/portside.rb` for Portside, `Formula/backstage.rb` for Backstage); do not edit them by hand.
+## Bruse
+
+```sh
+brew install padmk/tap/bruse
+bruse setup
+```
+
+[Bruse](https://github.com/padmk/bruse) gives local AI agents background control of your real browser, without taking focus or moving the cursor: an MCP server and a browser extension for Brave or Chrome. The formula works on macOS and Linux (Linux is tested less) and needs Node.js 26 or later; `bruse setup` installs the extension and registers the MCP server with your agent clients. Run `bruse setup` again after `brew upgrade bruse`, and `bruse uninstall` before `brew uninstall bruse`. Report problems in the [Bruse repository](https://github.com/padmk/bruse/issues).
+
+Each project's release workflow updates its own files here (`Casks/portside.rb` and `Formula/portside.rb` for Portside, `Formula/backstage.rb` for Backstage, `Formula/bruse.rb` for Bruse); do not edit them by hand.
