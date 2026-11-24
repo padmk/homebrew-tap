@@ -1,7 +1,7 @@
 # Rendered by .github/workflows/release.yml into the tap as Casks/portside.rb.
 cask "portside" do
-  version "0.11.3"
-  sha256 "f1f67c49f2434587e962628c56a85e633441b72b88283b86e1260479b7112bdf"
+  version "0.12.0"
+  sha256 "aca78659065bbce97ddc5c52e4b5f4e602e8a9cc2b7a3cfca3d3c7c3953a6822"
 
   url "https://github.com/padmk/portside/releases/download/v#{version}/Portside-#{version}.zip"
   name "Portside"

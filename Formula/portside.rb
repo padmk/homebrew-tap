@@ -5,8 +5,8 @@
 class Portside < Formula
   desc "Keep your local dev servers running, in one place"
   homepage "https://github.com/padmk/portside"
-  url "https://github.com/padmk/portside/archive/refs/tags/v0.11.3.tar.gz"
-  sha256 "2f31f6ecc734c1930d167213fef328f79d2736a234a444f9798f51261951eb59"
+  url "https://github.com/padmk/portside/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "df96da39cc5674d269e1826c658c053e58b2efed4fce9b67ef9cfb8c6278ee03"
   license "MIT"
 
   depends_on "go" => :build
@@ -33,8 +33,10 @@ class Portside < Formula
 
   def caveats
     <<~EOS
-      This installs the command-line tool and the daemon with its dashboard,
-      without the menu bar app. Open the dashboard in your browser with:
+      This installs the command-line tool and the daemon with its terminal UI
+      and dashboard, without the menu bar app. Open the terminal UI with:
+        portside tui
+      Or open the dashboard in your browser with:
         portside open
       To start the daemon at login (on Linux at boot, with lingering), run:
         portside service install
